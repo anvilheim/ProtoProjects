@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name to Color Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Name to Color Converter</h1>
+        <form id="name-form">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" class="border-color" placeholder="Enter first name">
+                <div class="drip-effect" id="first-name-drip"></div>
+            </div>
+            <div class="form-group">
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name" class="border-color" placeholder="Enter middle name (optional)">
+                <div class="drip-effect" id="middle-name-drip"></div>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" class="border-color" placeholder="Enter last name">
+                <div class="drip-effect" id="last-name-drip"></div>
+            </div>
+            <button type="button" onclick="saveColor()">Save Color</button>
+            <div id="error-message" class="error"></div>
+        </form>
+        <div id="color-box"></div>
+        <div id="color-name"></div>
+        <h2>Saved Colors</h2>
+        <div id="saved-colors"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

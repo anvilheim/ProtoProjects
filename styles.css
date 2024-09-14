@@ -1,0 +1,218 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #dbe2ef);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #34495e;
+}
+
+input {
+    width: 250px;
+    padding: 12px;
+    font-size: 16px;
+    border: 6px solid #bdc3c7;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+.drip-effect {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.drip {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 50px;
+    background: currentColor;
+    border-radius: 5px;
+    animation: drip 2s infinite;
+}
+
+@keyframes drip {
+    from {
+        height: 0;
+        opacity: 1;
+    }
+    to {
+        height: 50px;
+        opacity: 0;
+    }
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+#color-box {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: 15px;
+    border: 2px solid #bdc3c7;
+    background-color: #000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#color-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+}
+
+#saved-colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.color-item {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    border: 2px solid #bdc3c7;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.color-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: 2px solid #000; /* Black outline */
+}
+
+.color-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    input {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%; /* Full width on small screens */
+    }
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    #color-box {
+        height: 200px;
+    }
+    .color-item {
+        width: 100px;
+        height: 100px;
+    }
+    .tooltip {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
